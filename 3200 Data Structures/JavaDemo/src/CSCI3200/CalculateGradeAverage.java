@@ -3,20 +3,28 @@ package CSCI3200;
 import java.util.Scanner;
 
 public class CalculateGradeAverage {
-    public static void main (String[] args) {
-        double[][] Grades = new double[3][3];
-        
+    double[][] Grades = new double[3][3];
+    double[] student = new double[3];
+
+    public void ReadGrades() {
         Scanner UserInput = new Scanner(System.in);
         for(int row = 0; row < 3; row++) {
             for(int column = 0; column < 3; column++) {
                 System.out.print("Enter value for [" + row + "][" + column + "]: ");
-                Grades[row][column] = UserInput.nextDouble();
+                double gradeValue = UserInput.nextDouble();
+                if (gradeValue >= 0 && gradeValue <= 100){
+                    Grades[row][column] = gradeValue;
+                } else {
+                    System.out.println("Please enter a value between 0 and 100");
+                    UserInput.close();
+                    return;
+                }
             }
         }
         UserInput.close();
+    }
 
-        double[] student = new double[3];
-
+    public double[] AvgGrades() {
         for(int row = 0; row < Grades.length; row++) {
             for(int column = 0; column < Grades[row].length; column++){
                 student[row] = (Grades[row][column] + student[row]);
@@ -27,16 +35,13 @@ public class CalculateGradeAverage {
         for(int i = 0; i < 3; i++){
             System.out.println("The average for student at index "+ i + " = " + student[i]);
         }
+        return student;
     }
 
-    /* 
-    public double[] ReadGrades() {
+    public static void main (String[] args) {
+        CalculateGradeAverage run = new CalculateGradeAverage();
 
-        return;
+        run.ReadGrades();
+        run.AvgGrades();
     }
-
-    public double[] AvgGrades() {
-        return;
-    }
-    */
 }
