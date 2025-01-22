@@ -6,6 +6,8 @@ public class CalculateGradeAverage {
     double[][] Grades = new double[3][3];
     double[] student = new double[3];
 
+    //need to add constructor
+
     public void ReadGrades() {
         Scanner UserInput = new Scanner(System.in);
         for(int row = 0; row < 3; row++) {
