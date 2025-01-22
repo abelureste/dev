@@ -18,7 +18,7 @@ public class CalculateGradeAverage {
     public void Readgrades() {                                                          //Method to read grades returning void 
         Scanner UserInput = new Scanner(System.in);                                     //Initializes scanner
         for (int row = 0; row < totalRows; row++) {                                     //First for loop to represent rows, stops once row value is no longer less than the total amount of rows
-            for (int column = 0; column < totalColumns; column++) {                     //Second for loop to represent columns, stops once column value is no longer less than the total amount of column
+            for (int column = 0; column < totalColumns; column++) {                     //Second for loop to represent columns, stops once column value is no longer less than the total amount of columns
                 System.out.print("Enter value for [" + row + "][" + column + "]: ");    //Prompts user to enter values for the respective cells
                 double gradeValue = UserInput.nextDouble();                             //Assigns the user's input to gradeValue variable for later use
                 if (gradeValue >= 0 && gradeValue <= 100) {                             //Only accepts integers and floating point numbers between 0 and 100
@@ -33,30 +33,30 @@ public class CalculateGradeAverage {
     }
 
     public double[] Avggrades() {                                           //Method returning a double that is the average grade for each student
-        for(int row = 0; row < totalRows; row++) {                      
-            for(int column = 0; column < totalColumns; column++){           //FIX THIS MATH IT WONT WORK IF THE GRID OF ROWS AND COLUMNS IS NOT SQUARE (FIX FOR RECTANGULAR CASES)
-                averages[row] = (grades[row][column] + averages[row]);
+        for(int row = 0; row < totalRows; row++) {                          //First for loop to represent rows, stops once row value is no longer less than the total amount of rows
+            for(int column = 0; column < totalColumns; column++){           //Second for loop to represent columns, stops once column value is no longer less than the total amount of columns
+                averages[row] = (grades[row][column] + averages[row]);      //Fills the averages array by adding the grades together in same corresponding index from grades 2D array to averages 1D array
             }
-            averages[row] = (averages[row] / totalRows);
+            averages[row] = (averages[row] / totalColumns);                 //Divides each index by the total amount of columns giving the average (average = sum of numbers divided by # of numbers)
         }
 
-        for(int i = 0; i < totalRows; i++){
-            System.out.println("The average for averages at index "+ i + " = " + averages[i]);
+        for(int i = 0; i < totalRows; i++){                                                         //For loop initialization that won't stop until all rows are printed
+            System.out.println("The average for averages at index "+ i + " = " + averages[i]);      //Prints the average based on index
         }
         return averages;
     }
 
     public static void main (String[] args) {
-        Scanner UserInput = new Scanner(System.in);
-        System.out.print("How many students do you want to enter?: ");
-        int totalRows = UserInput.nextInt();
-        System.out.print("How many grades do you want to enter?: ");
-        int totalColumns = UserInput.nextInt();
+        Scanner UserInput = new Scanner(System.in);                             //Initializes scanner
+        System.out.print("How many students do you want to enter?: ");        //Prompts user to enter amount of rows for 2D array
+        int totalRows = UserInput.nextInt();                                    //Assigns variable to user's input
+        System.out.print("How many grades do you want to enter?: ");          //Prompts user to enter amount of columns for 2D array  
+        int totalColumns = UserInput.nextInt();                                 //Assigns variable to user's input
 
-        CalculateGradeAverage calculateGrade = new CalculateGradeAverage(totalRows, totalColumns);
+        CalculateGradeAverage calculateGrade = new CalculateGradeAverage(totalRows, totalColumns);      //Calls calculateGrade method and assigns variables cooresponding to user input
 
-        calculateGrade.Readgrades();
-        calculateGrade.Avggrades();
-        UserInput.close();
+        calculateGrade.Readgrades();        //Executes Readgrades method
+        calculateGrade.Avggrades();         //Executes Avggrades method
+        UserInput.close();                  //Closes scanner input
     }
 }
