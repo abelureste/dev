@@ -19,8 +19,7 @@ public class FindPItotheNthDigit {
             pattern.append("#");
         }
         DecimalFormat rounded = new DecimalFormat(pattern.toString());
-        double roundedDouble = Double.parseDouble(rounded.format(Math.PI));
-        return roundedDouble;
+        return Double.parseDouble(rounded.format(Math.PI));
     }
 
 }
