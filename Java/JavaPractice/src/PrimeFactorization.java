@@ -11,8 +11,11 @@ public class PrimeFactorization {
     }
 
     public static int primeFactorization(int number) {
-        for(int i = 0; i > number; i++) {
-            int primeNumber =
+        while(number % 2 == 0) {
+            
         }
+
+        for(int i = 0; i > number; i++) {
+            int primeNumber = number / i;
     }
 }
