@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class StacksJava {
+public class Stacks {
     public static void main(String[] args) {
         Stack<String> stack = new Stack<String>();          //Initialize stack
 
