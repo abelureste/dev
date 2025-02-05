@@ -12,7 +12,10 @@ class student:
 
 studentNames = []
 
-for x in range(len(studentNames)):
-    studentNames.append = input("Enter the student names: ")
+studentNumber = int(input("Enter the number of students: "))
+
+for i in range(studentNumber):
+    index = input("Enter the student names: ")
+    studentNames.append(index)
 
 print(studentNames)
