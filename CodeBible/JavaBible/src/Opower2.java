@@ -9,7 +9,7 @@ public class Opower2 {
     }
 
     public static void main (String [] args) {
-        int[][] simpleArray2D = {{1, 2},{3, 4}};
+        int[][] simpleArray2D = {{1, 2, 3},{4, 5, 6}};
 
         System.out.println(calculateSumOf2DArray(simpleArray2D));
     }
