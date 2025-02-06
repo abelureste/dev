@@ -1,4 +1,4 @@
-print("( Gradebook Program | Software Engineering )")
+print("----------- Gradebook Program | Software Engineering -----------")
 
 class Student:
     def __init__(self, studentName: str):
@@ -42,8 +42,8 @@ numberOfGrades = int(input("How many grades do you want to enter per student?: "
 
 for student in students:
     print(f"\nEntering grades for {student.studentName}")
+    count = 0
     for j in range(numberOfGrades):
-        count = 0
         count += 1
         grade = float(input(f"Enter grade #{count} for {student.studentName}: " ))
         student.addGrade(grade)
@@ -54,7 +54,7 @@ print(gb.center(50, '-'))
 print("Student name: ", *[student.studentName for student in students], sep="\t")
 
 for i in range(numberOfGrades):
-    print(f"Grade {i + 1}:", end="\t")
+    print(f"Grade #{i + 1}:", end="\t")
     for student in students:
         print(student.getGrade()[i], end="\t")
     print()
