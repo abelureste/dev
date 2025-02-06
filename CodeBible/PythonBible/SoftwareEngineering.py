@@ -1,21 +1,64 @@
-
 print("( Gradebook Program | Software Engineering )")
 
-class student:
-    def __init__(self, studentName: str, studentGrade: float):
+class Student:
+    def __init__(self, studentName: str):
         self.studentName = studentName
-        self.studentGrade = studentGrade
+        self.studentGrades = []
+
+    def addGrade(self, grade: float):
+        self.studentGrades.append(grade)
 
     def averageGrade(self):
-        return
+        if len(self.studentGrades) > 0:
+            return sum(self.studentGrades) / len(self.studentGrades)
+        else:
+            return "No grades entered"
+    
+    def letterAverageGrade(self):
+        avg = self.averageGrade()
+        if avg >= 90:
+            return "A"
+        elif avg >= 80:
+            return "B"
+        elif avg >= 70:
+            return "C"
+        elif avg >= 60:
+            return "D"
+        else:
+            return "F"
 
+    def getGrade(self):
+        return self.studentGrades
 
-studentNames = []
+students = []
 
 studentNumber = int(input("Enter the number of students: "))
 
 for i in range(studentNumber):
-    index = input("Enter the student names: ")
-    studentNames.append(index)
+    name = input("Enter the student names: ")
+    students.append(Student(name))
 
-print(studentNames)
+numberOfGrades = int(input("How many grades do you want to enter per student?: "))
+
+for student in students:
+    print(f"\nEntering grades for {student.studentName}")
+    for j in range(numberOfGrades):
+        count = 0
+        count += 1
+        grade = float(input(f"Enter grade #{count} for {student.studentName}: " ))
+        student.addGrade(grade)
+
+gb = "Gradebook"
+print("\n")
+print(gb.center(50, '-'))
+print("Student name: ", *[student.studentName for student in students], sep="\t")
+
+for i in range(numberOfGrades):
+    print(f"Grade {i + 1}:", end="\t")
+    for student in students:
+        print(student.getGrade()[i], end="\t")
+    print()
+
+print("\nGrade Averages:")
+for student in students:
+    print(f"Average grade for {student.studentName}: {student.averageGrade():.2f}, letter grade: {student.letterAverageGrade()}")
