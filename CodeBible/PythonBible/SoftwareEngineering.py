@@ -1,4 +1,5 @@
 print("----------- Gradebook Program | Software Engineering -----------")
+print("by Abel Ureste, Arosh Jamal, Surathin Yongyuen, and Andrew Boger")
 
 class Student:
     def __init__(self, studentName: str):       #Takes student name as input
@@ -45,20 +46,20 @@ for student in students:                #Enter information for each student inde
     count = 0                           #Starts counting to display what number grade the user is entering
     for j in range(numberOfGrades):     #For loop iterating equal to the value of numberOfGrades
         count += 1                      #Add 1 to the count variable storing what number grade is being inputted
-        grade = float(input(f"Enter grade #{count} for {student.studentName}: " ))          #Prints the # of grade being asked for and what student
+        grade = float(input(f"Enter grade #{count} for {student.studentName}: " ))          #Prints the # of grade being asked for and for what student
         student.addGrade(grade)         #Adds the grade to the grade list
 
-gb = "Gradebook"                        #Assi
-print("\n")
-print(gb.center(50, '-'))
-print("Student name: ", *[student.studentName for student in students], sep="\t")
+gb = "Gradebook"                        #Assigns the string Gradebook to gb
+print("\n")                             #Prints new line
+print(gb.center(50, '-'))               #Formats gb
+print("Student name: ", *[student.studentName for student in students], sep="\t")       #Prints each student name in the students list seperated by a tab
 
-for i in range(numberOfGrades):
-    print(f"Grade #{i + 1}:", end="\t")
-    for student in students:
-        print(student.getGrade()[i], end="\t")
+for i in range(numberOfGrades):         #Loops numberOfGrade
+    print(f"Grade #{i + 1}:", end="\t")     #Prints the grade number
+    for student in students:            #Loops for each student
+        print(student.getGrade()[i], end="\t")      #Retrieves the grade from the studentGrades list and prints it
     print()
 
 print("\nGrade Averages:")
-for student in students:
+for student in students:        #Prints the numberical grade averages per student and with an associated letter grade
     print(f"Average grade for {student.studentName}: {student.averageGrade():.2f}, letter grade: {student.letterAverageGrade()}")
