@@ -25,19 +25,23 @@ public class Chapter2Homework {
     }
         
     public static int alg3(int n){
-        int steps = 0;
-        for (int i = 0; i < n; i++) {
-            steps++;
+        int steps = 0;         //O(1)
+        System.out.println("N is: " + n);  //O(1)
+        for (int i = 0; i < n; i++) {      //O(1)
+            System.out.println("[Loop 1] Step " + steps + " i is: " + i);   //O(1)
+            steps++;           //O(1)
         }
-        for (int i = 0; i < n; i++) {
-            steps++;
+        for (int i = 0; i < n; i++) {      //O(1)    
+            System.out.println("[Loop 2] Step " + steps + " i is: " + i);   //O(1)
+            steps++;           //O(1)
         }
-        return steps;
+        return steps;          //O(1)
     }
 
     public static void main (String[] args) {
         
         alg1(100);
         alg2(10);
+        alg3(4);
     }
 }
