@@ -17,8 +17,7 @@ public class ExperimentalApproach {
 	public static void main(String[] args) {
 
 		for (int i = 1; i < 1000; i++) {
-			System.out.println(i + "\t" + alg1(i) + "\t" + ((int) (Math.log(i) / Math.log(2))) + "\t"
-					+ ((i * (int)(Math.log(i) / Math.log(2)))) + "\t" + (i * i) + "\t" + (i * i * i));
+			System.out.println(i + "," + alg1(i) + "," + ((int) (Math.log(i) / Math.log(2))) + "," + (i * i) + "," + (i * i * i));
 
 		}
 
