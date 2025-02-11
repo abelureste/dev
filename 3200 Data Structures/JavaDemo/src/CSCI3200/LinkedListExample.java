@@ -27,7 +27,7 @@ public class LinkedListExample{
     if (list.isEmpty()){
     System.out.println("Linked list is empty");
     }
-    else{
+    else {
     System.out.println( "Linked list size: " + size);
     }
     System.out.println("Adding data at 1st location: 55");
