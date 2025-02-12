@@ -13,6 +13,6 @@ public class Queues {
         queue.poll();
         queue.poll();
 
-        System.out.println(queue.peek());
+        System.out.println(queue.isEmpty());
     }
 }
