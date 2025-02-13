@@ -11,11 +11,15 @@ public class NodeDemo {
         job1.setLink(job2);
         job2.setLink(job3);
         job3.setLink(job4);
+
+        PrintNode current = job1;
         
-        while (job4 != null) {
-            System.out.print(job1.getJob());
-            System.out.print(" ");
-            job1 = job1.getLink();
+        while (current != null) {
+            System.out.print(current.getJob());
+            if (current.getLink() != null) {
+                System.out.print(" -> ");
+            }
+            current = current.getLink();
         }
     }
 }
