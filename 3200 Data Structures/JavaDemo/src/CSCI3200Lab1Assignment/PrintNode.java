@@ -1,8 +1,8 @@
 package CSCI3200Lab1Assignment;
 
-public class PrintNode{
+public class PrintNode<Type>{
     private int job;
-    private PrintNode link;
+    private Type link;
     public PrintNode () {
         job = 0;
         link = null;
@@ -11,17 +11,17 @@ public class PrintNode{
         this.job = job;
         link = null;
     }
-    public PrintNode(int job, PrintNode link) {
+    public PrintNode(int job, Type link) {
         this.job = job;
         this.link = link;
     }
-    public void setLink (PrintNode newLink) {
+    public void setLink (Type newLink) {
         link = newLink;
     }
     public void setJob (int newJob) {
         job = newJob;
     }
-    public PrintNode getLink () {
+    public Type getLink () {
         return link;
     }
     public int getJob () {

@@ -18,5 +18,7 @@ public class Spring3200Lab1 {
         System.out.println(myLinkedList.get(6));
         System.out.println(myLinkedList.getLast());
         System.out.println(myLinkedList + " List size: " + myLinkedList.size());
+
+        PrintNode<String> job4 = new PrintNode<String>();
     }
 }
