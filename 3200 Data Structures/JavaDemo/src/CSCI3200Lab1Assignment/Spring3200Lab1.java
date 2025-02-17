@@ -4,13 +4,13 @@ import java.util.LinkedList;
 
 public class Spring3200Lab1 {
     public static <Type> void PrintAllNodes(PrintNode<String> job) {        //Method that prints all nodes connected to the job inputted
-        PrintNode<String> current = job;
-        while (current != null) {
-            System.out.print(current.getJob());
-            if (current.getLink() != null) {
-                System.out.print(" --> ");
+        PrintNode<String> current = job;        //Initializes new node and equals it to the value inputted into the method
+        while (current != null) {           //Loops while the current node has a link
+            System.out.print(current.getJob());         //Prints the current node
+            if (current.getLink() != null) {        //If current node has a link
+                System.out.print(" --> ");        //Print arrow pointing to next node
             }
-            current = current.getLink();
+            current = current.getLink();        //Initalizes current node as the next node in the link
         }
         System.out.println("");
     }
