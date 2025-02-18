@@ -19,6 +19,6 @@ public class DynamicArrayExample {
         dynamicArray.remove(2);
         dynamicArray.add(60);
 
-        System.out.println(dynamicArray.get(2));
+        System.out.println(dynamicArray);
     }
 }
