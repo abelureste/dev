@@ -19,19 +19,51 @@ public class Spring3200Lab1 {
         //Question 1
         System.out.println("-------- Question 1 --------");
         LinkedList<String> myLinkedList = new LinkedList<String>();
+        
+        //Step 1
         myLinkedList.add("3200");
+
+        //Step 2
         myLinkedList.addFirst("CSCI");
+
+        //Step 3
         myLinkedList.add(":");
-        myLinkedList.add(3, "D1");
-        System.out.println(myLinkedList);
-        myLinkedList.add("   ");
-        System.out.println(myLinkedList + " List Size: " + myLinkedList.size());
+
+        //Step 4
+        myLinkedList.add(2, "D1");
+
+        //Step 5
+        System.out.println("Contents of the list: " + myLinkedList + ", List Size: " + myLinkedList.size());
+
+        //Step 6
+        myLinkedList.add(" ");
+        myLinkedList.add(" ");
+        myLinkedList.add(" ");
+
+        //Step 7
+        System.out.println("Contents of the list: " + myLinkedList + ", List Size: " + myLinkedList.size());
+
+        //Step 8
         myLinkedList.add("Spring 2025");
+
+        //Step 9
         myLinkedList.add("Algorithm Analysis");
+
+        //Step 10
         myLinkedList.add(6, "Data Structure");
-        System.out.println(myLinkedList.get(6));
-        System.out.println(myLinkedList.getLast());
-        System.out.println(myLinkedList + " List size: " + myLinkedList.size());
+
+        //Step 11
+        System.out.println("Element in the 6th position: " + myLinkedList.get(5));
+
+        //Step 12
+        System.out.println("Last element: " + myLinkedList.getLast());
+
+        //Step 13
+        myLinkedList.remove(5);
+        System.out.println("Element in the 6th position: " + myLinkedList.get(5));
+
+        //Step 14
+        System.out.println("Contents of the list: " + myLinkedList + " List size: " + myLinkedList.size());
 
         //Question 2
         System.out.println("");
