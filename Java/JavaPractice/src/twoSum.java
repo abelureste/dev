@@ -5,10 +5,10 @@ public class twoSum {
         int[] array = {3, 4, 6, 7};
         int target = 10;
 
-        System.out.println(Arrays.toString(TwoSum(array, target)));         //Arrays method only needed for this
+        System.out.println(Arrays.toString(TwoSumBRUTEFORCE(array, target)));         //Arrays method only needed for this
     }
 
-    public static int[] TwoSum(int[] nums, int target){
+    public static int[] TwoSumBRUTEFORCE(int[] nums, int target){
         for(int i = 0; i < nums.length; i++){
             for(int j = i + 1; j < nums.length; j++){
                 if(nums[i] + nums[j] == target){
