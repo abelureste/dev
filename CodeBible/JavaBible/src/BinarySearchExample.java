@@ -18,6 +18,6 @@ public class BinarySearchExample {
              else if (value > target) high = middle -1;
              else return middle; 
         }
-        return 0;
+        return -1;
     }
 }
