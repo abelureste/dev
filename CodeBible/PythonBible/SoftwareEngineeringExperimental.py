@@ -2,8 +2,8 @@ print("----------- Gradebook Program | Software Engineering -----------")
 
 class Student:
     def __init__(self, studentName: str):
-        self.studentName = studentName
-        self.studentGrades = []
+        self.studentName = studentName  #BoB
+        self.studentGrades = [] #90, 80, 70 
 
     def addGrade(self, grade: float):
         self.studentGrades.append(grade)
