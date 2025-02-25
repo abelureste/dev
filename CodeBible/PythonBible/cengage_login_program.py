@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from dotenv import load_dotenv
-import time 
+import time
 import os
 
 # Load environment variables from .env file
@@ -15,6 +15,8 @@ load_dotenv()
 # Retrieve credentials from .env
 username = os.getenv("USERNAME")
 password = os.getenv("PASSWORD")
+
+print(username)
 
 # Check if the credentials are loaded correctly
 if not username or not password:
