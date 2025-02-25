@@ -27,13 +27,15 @@ public class StackExerciseDemo {
             return;
         }
 
-        for(int i = 0; i < stack.capacity(); i++){
+        while(stack.isEmpty() != true){
             int temp = stack.pop();
-            int nextTemp = stack.pop();
-            if(temp < nextTemp){
-                sortedStack.push(temp);
+            if(temp > stack.peek()){
+                sortedStack.add(temp);
             }
-            stack = sortedStack;
+        }
+
+        while(stack.isEmpty() != false){
+            
         }
     }
 }
