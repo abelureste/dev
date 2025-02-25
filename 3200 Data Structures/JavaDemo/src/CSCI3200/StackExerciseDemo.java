@@ -18,7 +18,6 @@ public class StackExerciseDemo {
         userInput.close();
 
         StackSort(stack);
-        
     }
 
     public static void StackSort(Stack<Integer> stack){
