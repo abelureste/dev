@@ -18,25 +18,27 @@ public class StackExerciseDemo {
         userInput.close();
 
         StackSort(stack);
+
+        System.out.println(stack);
     }
 
     public static void StackSort(Stack<Integer> stack){
         Stack<Integer> sortedStack = new Stack<Integer>();
 
-        if(stack.isEmpty()){
-            return;
-        }
-
         while(stack.isEmpty() != true){
             int temp = stack.pop();
-            if(temp > stack.peek()){
-                sortedStack.add(temp);
+
+            while(sortedStack.isEmpty() != true && sortedStack.peek() < temp){
+                stack.push(sortedStack.pop());
             }
+
+            sortedStack.push(temp);
         }
 
-        while(stack.isEmpty() != false){
-            
+        while(sortedStack.isEmpty() != true){
+            stack.push(sortedStack.pop());
         }
+
     }
 }
 
