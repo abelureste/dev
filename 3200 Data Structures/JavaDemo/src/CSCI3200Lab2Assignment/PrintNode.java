@@ -1,36 +1,40 @@
 package CSCI3200Lab2Assignment;
 
-public class PrintNode{
-    private int job;
-    private PrintNode link;
+public class PrintNode<Type>{
+    private String job;
+    private PrintNode<Type> nextLink;
+    private PrintNode<Type> prevLink;
     public PrintNode () {
-        job = 0;
-        link = null;
+        job = "";
+        nextLink = null;
+        prevLink = null;
     }
-    public PrintNode (int job) {
+    public PrintNode (String job) {
         this.job = job;
-        link = null;
+        nextLink = null;
+        prevLink = null;
     }
-    public PrintNode(int job, PrintNode link) {
+    public PrintNode (String job, PrintNode<Type> nextLink, PrintNode<Type> prevNode) {
         this.job = job;
-        this.link = link;
+        this.nextLink = nextLink;
+        this.prevLink = prevNode;
     }
-    public void nextLink (PrintNode newLink) {
-        link = newLink;
-    }
-    public void prevLink (PrintNode lastLink) {
-        link = lastLink;
-    }
-    public void setJob (int newJob) {
+    public void setJob (String newJob) {
         job = newJob;
     }
-    public PrintNode getNextLink () {
-        return link;
+    public void setNextLink (PrintNode<Type> newLink) {
+        nextLink = newLink;
     }
-    public PrintNode getPrevLink () {
-        return link;
+    public void setPrevLink (PrintNode<Type> newLink) {
+        prevLink = newLink;
     }
-    public int getJob () {
+    public PrintNode<Type> getNextLink () {
+        return nextLink;
+    }
+    public PrintNode<Type> getPrevLink () {
+        return prevLink;
+    }
+    public String getJob () {
         return job;
     }
 }
