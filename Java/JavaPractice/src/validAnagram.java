@@ -1,28 +1,27 @@
-import java.util.Stack;
+import java.util.Arrays;
 
 public class validAnagram {
     public static void main (String[] args){
         String s = "racecar";
         String t = "carrace";
 
-        System.out.print(isAnagram(s, t));
+        System.out.print(isAnagramBRUTEFORCE(s, t));
     }
 
-    public static boolean isAnagram(String s, String t){
-        Stack<Character> temp = new Stack<Character>();
+    public static boolean isAnagramBRUTEFORCE(String s, String t){
 
         char[] sArray = s.toCharArray();
+        Arrays.sort(sArray);
+        String sSorted = new String(sArray);
 
-        for(char i : sArray) {
-            temp.push(i);
-        }
+        char[] tArray = t.toCharArray();
+        Arrays.sort(tArray);
+        String tSorted = new String(tArray);
 
-        String result = "";
-        while (!temp.isEmpty()) {
-            result = temp.pop() + result;
-        }
-        System.out.print(result);
-        if(result == t) {
+        System.out.println(sArray);
+        System.out.println(tArray);
+
+        if(sSorted.equals(tSorted)) {
             return true;
         }
 
