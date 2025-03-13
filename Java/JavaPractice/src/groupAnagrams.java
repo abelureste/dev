@@ -1,20 +1,26 @@
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class groupAnagrams {
     public static void main (String[] args) {
         String strs[] = {"act","pots","tops","cat","stop","hat"};
+
+        System.out.println(groupAnagramsBRUTEFORCE(strs));
     }
 
-    public List<List<String>> groupAnagramsBRUTEFORCE(String[] strs) {
-        HashMap<String, Integer> temp = new HashMap<String, Integer>();
+    public static List<List<String>> groupAnagramsBRUTEFORCE(String[] strs) {
+        HashMap<String, List<String>> temp = new HashMap<>();
 
-        for(int i = 0; i < strs.length; i++) {
-            for(int j = 0; j < strs[i].length(); j++) {
-                temp.put(strs[i], j);
-            }
+        for(String i : strs) {
+            char[] charArray = i.toCharArray();
+            Arrays.sort(charArray);
+            String sortedI = new String(charArray);
+            temp.putIfAbsent(sortedI, new ArrayList<>());
+            temp.get(sortedI).add(i);
         }
 
-        for 
+        return new ArrayList<>(temp.values());
     }
 }
