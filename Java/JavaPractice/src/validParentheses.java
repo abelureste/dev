@@ -41,6 +41,7 @@ public class validParentheses {
             } else {
                 stack.push(i);
             }
+            System.out.println(stack);
         }
 
         return stack.isEmpty();
