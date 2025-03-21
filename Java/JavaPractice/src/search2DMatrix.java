@@ -4,6 +4,7 @@ public class search2DMatrix {
         int target = 10;
 
         System.out.println(searchMatrixBRUTEFORCE(matrix, target));
+        System.out.println(searchMatrixEFFICIENT(matrix, target));
     }
 
     public static boolean searchMatrixBRUTEFORCE(int[][] matrix, int target) {
@@ -22,11 +23,24 @@ public class search2DMatrix {
     }
 
     public static boolean searchMatrixEFFICIENT(int[][] matrix, int target) {
-        
-        for(int i = 0; i < matrix.length; i++){
-            if(matrix[i][0] > target) {
-                int[] splitArray = matrix[i - 1];
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+
+        int left = 0, right = rows * columns - 1;
+        while (left <= right) {
+            int middle = left + (right - 1) / 2;
+            int row = middle / columns;
+            int column = middle % columns;
+
+            if(target > matrix[row][column]) {
+                left = middle + 1;
+            } else if (target < matrix[row][column]) {
+                right = middle - 1;
+            } else {
+                return true;
             }
         }
+
+        return false;
     } 
 }
