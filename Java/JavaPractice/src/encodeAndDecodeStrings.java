@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class encodeAndDecodeStrings {
     public static void main(String[] args) {
@@ -10,6 +10,7 @@ public class encodeAndDecodeStrings {
         stringList.add("you");
     }
 
+    /* 
     public String encode(List<String> strs) {
         for(String i : strs){
             
@@ -19,4 +20,5 @@ public class encodeAndDecodeStrings {
     public List<String> decode(String str) {
 
     }
+    */
 }
