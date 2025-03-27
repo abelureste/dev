@@ -2,12 +2,25 @@ public class buyAndSellStock {
     public static void main(String[] args) {
         int[] array = {10,1,5,6,7,1};
 
-        System.out.println(maxProfit(array));
+        System.out.println(maxProfitBruteForce(array));
+        System.out.println(maxProfitDynamicProgramming(array));
         System.out.println(maxProfit2Pointers(array));
         
     }
 
-    public static int maxProfit(int[] prices) {
+    public static int maxProfitBruteForce(int[] prices) {
+        int result = 0;
+        for(int i = 0; i < prices.length; i++) {
+            int buy = prices[i];
+            for(int j = i + 1; j < prices.length; j++) {
+                int sell = prices[j];
+                result = Math.max(result, sell - buy);
+            }
+        }
+        return result;
+    }
+
+    public static int maxProfitDynamicProgramming(int[] prices) {
         int maxPrice = 0;
         int minBuy = prices[0];
 
@@ -19,7 +32,7 @@ public class buyAndSellStock {
         return maxPrice;
     }
 
-    public static int maxProfit2Pointers(int[] prices){
+    public static int maxProfit2Pointers(int[] prices) {
         int left = 0, right = 0;
         int maxPrice = 0;
 

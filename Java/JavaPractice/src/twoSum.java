@@ -3,8 +3,8 @@ import java.util.HashMap;       //Needed for efficient method, O(n)
 
 public class twoSum {
     public static void main (String[] args) {
-        int[] array = {3, 4, 5, 6};
-        int target = 7;
+        int[] array = {2, 1, 5, 3};
+        int target = 4;
 
         System.out.println(Arrays.toString(twoSumBRUTEFORCE(array, target)));         //Arrays method only needed for this
         System.out.println(Arrays.toString(twoSumEFFICIENT(array, target)));          //Arrays method only needed for this
@@ -12,7 +12,9 @@ public class twoSum {
 
     public static int[] twoSumBRUTEFORCE(int[] nums, int target){
         for(int i = 0; i < nums.length; i++){
+            System.out.println(i);
             for(int j = i + 1; j < nums.length; j++){
+                System.out.println(j);
                 if(nums[i] + nums[j] == target){
                     return new int[] {i,j};
                 }
