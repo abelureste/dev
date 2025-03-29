@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 public class validParentheses {
@@ -10,25 +9,21 @@ public class validParentheses {
         System.out.println(isValidEFFICIENT(s));
     }
 
-    public static boolean isValidBRUTEFORCE(String s) {
+    public static boolean isValidBruteForce(String s) {
         while(s.contains("()") || s.contains("{}") || s.contains("[]")) {
             s = s.replace("()", "");
             s = s.replace("{}", "");
             s = s.replace("[]", "");
         }
-
-        if(s.isEmpty()) {
-            return true;
-        }
         
-        else return false;
+        return s.isEmpty();
     }
 
-    public static boolean isValidEFFICIENT(String s) {
+    public static boolean isValidStack(String s) {
         Stack<Character> stack = new Stack<>();
-        Map<Character, Character> closeToOpen = new HashMap<>();
+        HashMap<Character, Character> closeToOpen = new HashMap<>();
         closeToOpen.put(')', '(');
-        closeToOpen.put(']' , '[');
+        closeToOpen.put(']', '[');
         closeToOpen.put('}', '{');
 
         for(char i : s.toCharArray()) {
