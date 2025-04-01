@@ -5,8 +5,8 @@ public class validParentheses {
     public static void main(String[] args) {
         String s = "([{}])";
 
-        System.out.println(isValidBRUTEFORCE(s));
-        System.out.println(isValidEFFICIENT(s));
+        System.out.println(isValidBruteForce(s));
+        System.out.println(isValidStack(s));
     }
 
     public static boolean isValidBruteForce(String s) {

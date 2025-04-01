@@ -3,6 +3,7 @@ public class maximumSubarray {
         int[] nums = {2,-3,4,-2,2,1,-1,4};
 
         System.out.println(maximumSubarrayBruteForce(nums));
+        System.out.println(maximumSubarrayGreedy(nums));
 
     }
 
@@ -20,5 +21,20 @@ public class maximumSubarray {
         }
 
         return result;
+    }
+
+    public static int maximumSubarrayGreedy(int[] array){
+        int maxSub = array[0];
+        int curSum = 0;
+
+        for(int i: array){
+            if(curSum < 0){
+                curSum = 0;
+            }
+            curSum += i;
+            maxSub = Math.max(maxSub, curSum);
+        }
+
+        return maxSub;
     }
 }
