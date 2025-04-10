@@ -82,11 +82,11 @@ public class ArrayBST {
         //2*(k)+1
         int index = getIndex(value);
         if (index == -1) {
-            return -1; // Value not found
+            return -1; //Value not found
         }
         int leftIndex = 2 * index + 1;
         if (leftIndex >= nodes) {
-            return -2; // No left child
+            return -2; //No left child
         }
         return leftIndex;
     }
@@ -97,11 +97,11 @@ public class ArrayBST {
         //2*(k)+2
         int index = getIndex(value);
         if (index == -1) {
-            return -1; // Value not found
+            return -1; //Value not found
         }
         int rightIndex = 2 * index + 2;
         if (rightIndex >= nodes) {
-            return -3; // No right child
+            return -3; //No right child
         }
         return rightIndex;
     }
@@ -112,10 +112,10 @@ public class ArrayBST {
         //(k-1)/2
         int index = getIndex(value);
         if (index == -1) {
-            return -1; // Value not found
+            return -1; //Value not found
         }
         if (index == 0) {
-            return -4; // Root node has no parent
+            return -4; //Root node has no parent
         }
         return (index - 1) / 2;
     }
