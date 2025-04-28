@@ -1,16 +1,13 @@
 package OptionalBST;
 
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.*;
 
 public class BinarySearchTreeDriver {
 	public static void main(String[] args) {
-		BinarySearchTree_LinkedList bintree = new BinarySearchTree_LinkedList();
+		//create a binary search tree with root node set to 10
+		BinarySearchTree_LinkedList bintree = new BinarySearchTree_LinkedList(10);
 		
-		//Insert 6 nodes in the BST
-		Node<Integer> node1 = new Node<Integer>(10);
-		bintree.root = node1;
-		
+		//Insert 5 nodes in the BST
 		Node<Integer> node2 = new Node<Integer>(5);
 		bintree.insert(bintree.root, node2);
 		
@@ -27,22 +24,21 @@ public class BinarySearchTreeDriver {
 		bintree.insert(bintree.root, node6);
 				
 		//displays the minimum value in the binary search tree
-		System.out.println("The minimum value in the binary tree is: "+bintree.findmin(node1).element);
+		System.out.println("The minimum value in the binary tree is: "+bintree.findmin(bintree.root).element);
 		//displays the maximum value in the binary search tree
-		System.out.println("The maximum value in the binary tree is: "+bintree.findmax(node1).element);
+		System.out.println("The maximum value in the binary tree is: "+bintree.findmax(bintree.root).element);
 		
 		//Searching the BST for a value
-		if (BinarySearchTree_LinkedList.searchNode(bintree.root, 6))
+		if (bintree.searchNode(bintree.root, 6))
 			System.out.println("Found the node in the tree!");
 		else
 			System.out.println("Unable to Find the node");
 
 		// LinkedList that contain all the children of a node
 		LinkedList<Node<Integer>> myList = new LinkedList<Node<Integer>>();
-		LinkedList<Node<Integer>> val = bintree.children(node1, node3, myList);
+		LinkedList<Node<Integer>> val = bintree.children(bintree.root, node3.element, myList);
 		System.out.print("The child node(s) is/are: ");
 		if (val.size() != 0) {
-			Iterator<Node<Integer>> iterate = val.iterator();
 			for (Node<Integer> temp : val) {
 				System.out.println(temp.element);
 			}
@@ -52,7 +48,7 @@ public class BinarySearchTreeDriver {
 		}
 		
 		//display the parent of a node
-		System.out.println("The parent is " + bintree.parent(node1, node5));
+		System.out.println("The parent is " + bintree.parent(bintree.root, node5));
 
 	}
 
